@@ -7,6 +7,7 @@ import Basic from '@/components/Basic'
 import HighCharts from '@/components/HighCharts'
 import DataTable from '@/components/DataTable'
 import JqueryUI from '@/components/JqueryUI'
+import HttpProxy from '@/components/HttpProxy'
 import LoginPage from '@/components/login/LoginPage'
 
 Vue.use(Router)
@@ -52,6 +53,11 @@ export default new Router({
       path: '/jqueryui',
       name: 'JqueryUI',
       component: JqueryUI
+    },
+    {
+      path: '/httpproxy',
+      name: 'HttpProxy',
+      component: HttpProxy
     }
   ]
 })

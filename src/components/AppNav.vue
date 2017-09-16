@@ -31,6 +31,11 @@
               <router-link to="/jqueryui" active-class="active">Jquery UI</router-link>
             </b-dropdown-item>
           </b-nav-item-dropdown>
+          <b-nav-item>
+            <router-link to="/httpproxy" class="nav-link" active-class="active">
+              Http Proxy
+            </router-link>
+          </b-nav-item>
         </b-nav>
         <login-menu-item />
        </b-collapse>

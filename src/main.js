@@ -6,6 +6,10 @@ import router from './router'
 import BootstrapVue from 'bootstrap-vue'
 import store from './store'
 
+import VueResource from 'vue-resource'
+Vue.use(VueResource)
+Vue.http.options.emulateJSON = true
+
 /* to register my component globally */
 import Panel from './components/Panel'
 Vue.component('panel', Panel)

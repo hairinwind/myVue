@@ -27,7 +27,34 @@ module.exports = {
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/api': {
+        target: 'http://localhost:12345',
+        changeOrigin: true, 
+        ws: true,                                     // proxy websockets
+        pathRewrite: {
+          '^/api/words': '/api/words' 
+        }, 
+        router: {
+          // when request.headers.host == 'dev.localhost:3000',
+          // override target 'http://www.example.org' to 'http://localhost:8000'
+          // 'dev.localhost:3000': 'http://localhost:8000'
+        }
+      },
+      '/service': {
+        target: 'http://services.groupkt.com',
+        changeOrigin: true, 
+        ws: true,                                     // proxy websockets
+        pathRewrite: {
+          '^/service/state/': '/state/get/' 
+        }, 
+        router: {
+          // when request.headers.host == 'dev.localhost:3000',
+          // override target 'http://www.example.org' to 'http://localhost:8000'
+          // 'dev.localhost:3000': 'http://localhost:8000'
+        }
+      }
+    },
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README
     // (https://github.com/webpack/css-loader#sourcemaps)
